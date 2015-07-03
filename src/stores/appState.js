@@ -1,6 +1,12 @@
 const ffux   = require('ffux'),
-      Tab    = require('./tab')
+      Tab    = require('./tab'),
+      Search = require('./search')
 
 module.exports = () => {
-  return ffux({ tab: Tab('home') }, { flatActions: true })
+  const homeSearch = Search('')
+
+  return ffux({
+    tab: Tab('home'),
+    homeSearch: homeSearch
+  }, { flatActions: true })
 }
