@@ -1,11 +1,18 @@
-const React = require('react-native')
+const React        = require('react-native'),
+      NavigationBar = require('./NavigationBar'),
+      commonStyles  = require('./commonStyles')
 
 const {
-  Text
+  Text,
+  View
 } = React
 
 module.exports = React.createClass({
   render() {
-    return <Text>Search view</Text>
+    return (
+      <View style={commonStyles.container}>
+        <NavigationBar content={<NavigationBar.TitleText title="Search" />} />
+      </View>
+    )
   }
 })
