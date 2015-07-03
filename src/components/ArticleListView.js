@@ -56,7 +56,9 @@ module.exports = React.createClass({
 var styles = StyleSheet.create({
   article: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ddd'
   },
   articleNoImage: {
     paddingTop: 20,
