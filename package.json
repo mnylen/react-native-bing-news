@@ -8,6 +8,6 @@
   "dependencies": {
     "baconjs": "^0.7.66",
     "ffux": "^0.6.0",
-    "react-native": "facebook/react-native#0.7-stable"
+    "react-native": "facebook/react-native#master",
   }
 }
