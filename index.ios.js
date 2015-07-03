@@ -6,8 +6,7 @@
 
 var React = require('react-native');
 var MainView = require('./src/components/MainView')
-var ffux = require('ffux')
-var uiState = require('./src/stores/uiState.js')
+var appState = require('./src/stores/appState')
 
 var {
   AppRegistry,
@@ -20,7 +19,7 @@ var BingNews = React.createClass({
   },
 
   componentDidMount() {
-    var dispatcher = ffux({ uiState: uiState() }, { flatActions: true });
+    var dispatcher = appState()
     dispatcher.listen((model) => this.setState({ model }))
   },
 

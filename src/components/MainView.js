@@ -12,9 +12,9 @@ const {
 
 module.exports = React.createClass({
   _renderTabContent() {
-      const {activeTab} = this.props.state.uiState
+      const {tab} = this.props.state
 
-      switch (activeTab) {
+      switch (tab) {
         case 'home': return <HomeView {...this.props} />
         case 'search': return <SearchView {...this.props} />
         case 'bookmarks': return <BookmarksView {...this.props} />
@@ -22,11 +22,11 @@ module.exports = React.createClass({
   },
 
   _selectTab(name) {
-    this.props.actions.selectTab(name)
+    this.props.actions.switchTab(name)
   },
 
   render() {
-    const {activeTab} = this.props.state.uiState
+    const {tab} = this.props.state
 
     return (
       <View style={styles.container}>
@@ -35,9 +35,9 @@ module.exports = React.createClass({
         </View>
 
         <View style={styles.tabBar}>
-          <TabBarIcon onPress={this._selectTab} name="home" icon="ion|home" selectedTabName={activeTab} />
-          <TabBarIcon onPress={this._selectTab} name="bookmarks" icon="ion|pin" style={styles.rotate45} selectedTabName={activeTab} />
-          <TabBarIcon onPress={this._selectTab} name="search" icon="ion|search" selectedTabName={activeTab} />
+          <TabBarIcon onPress={this._selectTab} name="home" icon="ion|home" selectedTabName={tab} />
+          <TabBarIcon onPress={this._selectTab} name="bookmarks" icon="ion|pin" style={styles.rotate45} selectedTabName={tab} />
+          <TabBarIcon onPress={this._selectTab} name="search" icon="ion|search" selectedTabName={tab} />
         </View>
       </View>
     )
