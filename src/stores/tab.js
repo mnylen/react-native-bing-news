@@ -3,7 +3,14 @@ const {createStore} = require('ffux')
 module.exports = createStore({
   actions: ["switchTab"],
 
-  state(tab, {switchTab}) {
-    return switchTab.toProperty(tab)
+  state(initialTab, { switchTab }, { bookmarks }) {
+    const switchOnBookmarkSelect =
+      bookmarks
+        .changes()
+        .map('.selected')
+        .skipDuplicates()
+        .map(_ => 'bookmarks')
+
+    return switchTab.merge(switchOnBookmarkSelect).toProperty(initialTab)
   }
 })

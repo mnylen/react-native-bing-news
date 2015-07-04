@@ -65,6 +65,13 @@ module.exports = React.createClass({
     }
   },
 
+  componentDidMount() {
+    const {selected: selectedBookmark} = this.props.state.bookmarks
+    if (selectedBookmark) {
+      this.refs.navigator.push({ bookmark: selectedBookmark })
+    }
+  },
+
   render() {
     return (
       <Navigator

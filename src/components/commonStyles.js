@@ -15,4 +15,9 @@ module.exports = StyleSheet.create({
     width: 24,
     height: 24
   },
+  rotate45: {
+    transform: [
+      { rotate: '45 deg' }
+    ]
+  }
 })
