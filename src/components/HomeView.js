@@ -10,7 +10,7 @@ const {
 
 module.exports = React.createClass({
   render() {
-    const {results} = this.props.state.homeSearch
+    const {results} = this.props.state.home
 
     return (
       <View style={commonStyles.container}>

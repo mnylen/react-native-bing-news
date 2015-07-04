@@ -22,7 +22,7 @@ module.exports = React.createClass({
   },
 
   _selectTab(name) {
-    this.props.actions.switchTab(name)
+    this.props.actions.tab.switchTab(name)
   },
 
   render() {

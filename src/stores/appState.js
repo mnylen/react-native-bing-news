@@ -1,12 +1,15 @@
-const ffux   = require('ffux'),
-      Tab    = require('./tab'),
-      Search = require('./search')
+const ffux      = require('ffux'),
+      Tab       = require('./tab'),
+      Search    = require('./search'),
+      Bookmarks = require('./bookmarksData')
 
 module.exports = () => {
-  const homeSearch = Search('')
+  const homeData = Search(''),
+        bookmarksData = Bookmarks(["fallout 4", "deus ex mankind divided", "ukraine war"])
 
   return ffux({
-    tab: Tab('home'),
-    homeSearch: homeSearch
-  }, { flatActions: true })
+    tab: Tab('bookmarks'),
+    home: homeData,
+    bookmarks: bookmarksData
+  })
 }
