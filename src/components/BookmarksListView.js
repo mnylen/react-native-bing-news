@@ -29,6 +29,7 @@ module.exports = React.createClass({
         style={[commonStyles.container, this.props.style]}
         renderRow={this._renderBookmark}
         dataSource={ds.cloneWithRows(this.props.bookmarks)}
+        automaticallyAdjustContentInsets={false}
       />
     )
   }

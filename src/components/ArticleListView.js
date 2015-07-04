@@ -48,6 +48,7 @@ module.exports = React.createClass({
         initialListSize={20}
         dataSource={ds}
         renderRow={this._renderArticle}
+        automaticallyAdjustContentInsets={false}
       />
     )
   }
