@@ -6,7 +6,7 @@ module.exports = createStore({
   actions: ["search"],
 
   state(initialQuery, {search}) {
-    const query   = search.toProperty(initialQuery).map('.trim.skipDuplicates')
+    const query   = search.toProperty(initialQuery).map('.trim').skipDuplicates()
     const results = query.debounce(200).flatMapLatest(bing.search)
     const await   = query.awaiting(results)
 
