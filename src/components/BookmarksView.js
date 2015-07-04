@@ -30,15 +30,19 @@ module.exports = React.createClass({
     if (selectedBookmark) {
       navigationBarContent = (
         <View style={[commonStyles.horizontalContainer]}>
-          <TouchableOpacity opacity={0.5} onPress={this.props.actions.bookmarks.closeBookmark}>
-            <Icon
-              name='ion|ios-arrow-back'
-              size={26}
-              color='#444'
-              style={[commonStyles.icon, styles.navBarBackButton]} />
-          </TouchableOpacity>
+          <View style={styles.navBarLeft}>
+            <TouchableOpacity opacity={0.5} onPress={this.props.actions.bookmarks.closeBookmark}>
+              <Icon
+                name='ion|ios-arrow-back'
+                size={26}
+                color='#444'
+                style={commonStyles.icon} />
+            </TouchableOpacity>
+          </View>
 
           <NavigationBar.TitleText title={selectedBookmark} />
+
+          <View style={styles.navBarRight} />
         </View>
       )
     } else {
@@ -75,7 +79,13 @@ module.exports = React.createClass({
 })
 
 const styles = StyleSheet.create({
-  navBarBackButton: {
-    marginLeft: 10
+  navBarLeft: {
+    marginLeft: 10,
+    width: 24,
+    alignItems: 'flex-start'
+  },
+  navBarRight: {
+    width: 34,
+    alignItems: 'flex-end'
   }
 })
