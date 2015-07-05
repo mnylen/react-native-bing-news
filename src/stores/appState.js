@@ -3,10 +3,10 @@ const ffux      = require('ffux'),
       Search    = require('./search'),
       Bookmarks = require('./bookmarksData')
 
-module.exports = () => {
+module.exports = (storedBookmarks) => {
   const homeData      = Search(''),
         searchData    = Search(''),
-        bookmarksData = Bookmarks(["fallout 4", "deus ex mankind divided", "ukraine war"])
+        bookmarksData = Bookmarks(storedBookmarks)
 
   return ffux({
     tab: Tab('home', { bookmarks: bookmarksData }),

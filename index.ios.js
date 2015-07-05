@@ -10,7 +10,8 @@ var appState = require('./src/stores/appState')
 
 var {
   AppRegistry,
-  View
+  View,
+  AsyncStorage
 } = React;
 
 var BingNews = React.createClass({
@@ -18,9 +19,31 @@ var BingNews = React.createClass({
     return { model: null };
   },
 
+  _modelWillChange(newModel) {
+    var {model: oldModel} = this.state
+    if (oldModel) {
+      var oldBookmarks = oldModel.state.bookmarks.bookmarks
+      var newBookmarks = newModel.state.bookmarks.bookmarks
+
+      if (oldBookmarks !== newBookmarks) {
+        console.log("Storing updated bookmarks")
+        AsyncStorage.setItem('bookmarks', JSON.stringify(newBookmarks))
+      }
+    }
+
+    this.setState({ model: newModel })
+  },
+
   componentDidMount() {
-    var dispatcher = appState()
-    dispatcher.listen((model) => this.setState({ model }))
+    AsyncStorage.getItem('bookmarks', (err, data) => {
+      var bookmarks = []
+      if (data) {
+        bookmarks = JSON.parse(data) || []
+      }
+
+      var dispatcher = appState(bookmarks)
+      dispatcher.listen(this._modelWillChange)
+    })
   },
 
   render: function() {
