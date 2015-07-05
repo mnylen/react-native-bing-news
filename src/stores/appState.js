@@ -9,7 +9,7 @@ module.exports = () => {
         bookmarksData = Bookmarks(["fallout 4", "deus ex mankind divided", "ukraine war"])
 
   return ffux({
-    tab: Tab('search', { bookmarks: bookmarksData }),
+    tab: Tab('home', { bookmarks: bookmarksData }),
     home: homeData,
     bookmarks: bookmarksData,
     search: searchData
