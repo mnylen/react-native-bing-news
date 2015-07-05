@@ -1,5 +1,7 @@
 const React        = require('react-native'),
-      commonStyles = require('./commonStyles')
+      commonStyles = require('./commonStyles'),
+       SafariView  = require('react-native-safari-view')
+
 
 const {
   Text,
@@ -12,7 +14,7 @@ const {
 
 module.exports = React.createClass({
   _openArticle(article) {
-
+    SafariView.show({ url: article.url, readerMode: true })
   },
 
   _renderArticle(article) {

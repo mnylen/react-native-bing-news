@@ -14,6 +14,7 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* BingNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BingNewsTests.m */; };
+		12C6DCCE1B4866FF0006460B /* libSafariViewManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12C6DCCD1B4866F00006460B /* libSafariViewManager.a */; };
 		12EEB0961B45A986002E8D97 /* libReactNativeIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12EEB0951B45A97D002E8D97 /* libReactNativeIcons.a */; };
 		12EEB0981B45A9AD002E8D97 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 12EEB0971B45A9AD002E8D97 /* ionicons.ttf */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
@@ -70,6 +71,13 @@
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = BingNews;
 		};
+		12C6DCCC1B4866F00006460B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12C6DCBD1B4866F00006460B /* SafariViewManager.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = SafariViewManager;
+		};
 		12EEB0941B45A97D002E8D97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 12EEB0861B45A97D002E8D97 /* ReactNativeIcons.xcodeproj */;
@@ -124,6 +132,7 @@
 		00E356EE1AD99517003FC87E /* BingNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BingNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* BingNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BingNewsTests.m; sourceTree = "<group>"; };
+		12C6DCBD1B4866F00006460B /* SafariViewManager.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SafariViewManager.xcodeproj; path = "node_modules/react-native-safari-view/SafariViewManager.xcodeproj"; sourceTree = "<group>"; };
 		12EEB0861B45A97D002E8D97 /* ReactNativeIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeIcons.xcodeproj; path = "node_modules/react-native-icons/iOS/ReactNativeIcons.xcodeproj"; sourceTree = "<group>"; };
 		12EEB0971B45A9AD002E8D97 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ionicons.ttf; path = "node_modules/react-native-icons/iOS/ReactNativeIcons/Libraries/FontAwesomeKit/ionicons.ttf"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
@@ -152,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12C6DCCE1B4866FF0006460B /* libSafariViewManager.a in Frameworks */,
 				12EEB0961B45A986002E8D97 /* libReactNativeIcons.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
@@ -226,6 +236,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		12C6DCBE1B4866F00006460B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12C6DCCD1B4866F00006460B /* libSafariViewManager.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		12EEB0871B45A97D002E8D97 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +301,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				12C6DCBD1B4866F00006460B /* SafariViewManager.xcodeproj */,
 				12EEB0861B45A97D002E8D97 /* ReactNativeIcons.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -437,6 +456,10 @@
 					ProductGroup = 12EEB0871B45A97D002E8D97 /* Products */;
 					ProjectRef = 12EEB0861B45A97D002E8D97 /* ReactNativeIcons.xcodeproj */;
 				},
+				{
+					ProductGroup = 12C6DCBE1B4866F00006460B /* Products */;
+					ProjectRef = 12C6DCBD1B4866F00006460B /* SafariViewManager.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -480,6 +503,13 @@
 			fileType = archive.ar;
 			path = libRCTVibration.a;
 			remoteRef = 00C302E31ABCB9EE00DB3ED1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		12C6DCCD1B4866F00006460B /* libSafariViewManager.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSafariViewManager.a;
+			remoteRef = 12C6DCCC1B4866F00006460B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		12EEB0951B45A97D002E8D97 /* libReactNativeIcons.a */ = {

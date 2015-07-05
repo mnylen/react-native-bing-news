@@ -10,6 +10,7 @@
     "ffux": "^0.6.0",
     "react-native": "facebook/react-native#master",
     "react-native-icons": "mnylen/react-native-icons#0.7-support",
+    "react-native-safari-view": "mnylen/react-native-safari-view#0.7-support",
     "react-timer-mixin": "^0.13.1",
     "xmldom": "^0.1.19"
   }
