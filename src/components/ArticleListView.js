@@ -9,12 +9,15 @@ const {
   StyleSheet,
   ListView,
   TouchableHighlight,
-  Image
+  Image,
+  LinkingIOS
 } = React
 
 module.exports = React.createClass({
   _openArticle(article) {
-    SafariView.show({ url: article.url, readerMode: true })
+    SafariView.isAvailable()
+      .then(() => SafariView.show({ url: article.url, readerMode: true }))
+      .catch(() => LinkingIOS.openURL(article.url))
   },
 
   _renderArticle(article) {
