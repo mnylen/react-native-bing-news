@@ -21,10 +21,7 @@ module.exports = createStore({
       [addBookmark],    (state, bm) => ({...state, bookmarks: [...state.bookmarks, bm], selected: bm }),
       [selectBookmark], (state, bm) => ({...state, selected: bm, selectedResults: EMPTY_RESULTS }),
       [closeBookmark],  (state, _)  => ({...state, selected: null, selectedResults: EMPTY_RESULTS }),
-      [resultsChanges], (state, rs) => {
-        console.log("got rs:", rs)
-        return {...state, selectedResults: rs }
-      }
+      [resultsChanges], (state, rs) => ({...state, selectedResults: rs })
     )
   }
 })
